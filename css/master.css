@@ -1,0 +1,267 @@
+/* 
+  Root variables for colors and fonts 
+*/
+:root {
+    /* Colors */
+    --clr-bg: #f2ebe3;
+    /* Background color for the page */
+    --clr-white: #ffffff;
+    /* White color for card background */
+    --clr-dark-blue: #1c232b;
+    /* Dark blue for headings */
+    --clr-gray-blue: #6c7289;
+    /* Gray-blue for text */
+    --clr-green: #3c8067;
+    /* Green for price and buttons */
+    --clr-light-green: #1a4032;
+    /* Darker green for hover state */
+
+    /* Typography */
+    --ff-base: 'Montserrat', sans-serif;
+    /* Base font family */
+    --ff-accent: 'Fraunces', serif;
+    /* Accent font family for headings/prices */
+}
+
+/* 
+  Reset box-sizing and remove default margin/padding 
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+  Enable smooth scrolling for anchor links 
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* 
+  Body styles: center content and set background 
+*/
+body {
+    background-color: var(--clr-bg);
+    /* Use background color variable */
+    display: grid;
+    /* Use grid to center content */
+    place-items: center;
+    /* Center content horizontally and vertically */
+    min-height: 100vh;
+    /* Full viewport height */
+}
+
+/* 
+  Card container styles 
+*/
+.card {
+    background-color: var(--clr-white);
+    /* Card background */
+    display: grid;
+    /* Use grid layout */
+    grid-template-columns: 1fr 1fr;
+    /* Two columns: image and text */
+    border-radius: 15px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Hide overflow for rounded corners */
+    width: 100%;
+    /* Full width of parent */
+    max-width: 600px;
+    /* Maximum width for card */
+   
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    /* Subtle shadow for depth */
+}
+
+/* 
+  Product image styles 
+*/
+.card img {
+    border-top-left-radius: 15px;
+    /* Rounded top-left corner */
+    border-bottom-left-radius: 15px;
+    /* Rounded bottom-left corner */
+    width: 100%;
+    /* Full width of container */
+    height: 100%;
+    /* Full height of container */
+    object-fit: cover;
+    /* Cover the container without distortion */
+}
+
+/* 
+  Text section inside the card 
+*/
+.text-part {
+    padding: 30px;
+    /* Padding around text */
+}
+
+/* 
+  Product category label styles 
+*/
+.text-part .category {
+    font-family: var(--ff-base);
+    /* Use base font */
+    color: var(--clr-gray-blue);
+    /* Gray-blue color */
+    font-size: 14px;
+    /* Small font size */
+    letter-spacing: 5px;
+    /* Spaced out letters */
+    font-weight: 500;
+    /* Medium weight */
+}
+
+/* 
+  Product title styles 
+*/
+.text-part h1 {
+    font-family: var(--ff-accent);
+    /* Use accent font */
+    color: var(--clr-dark-blue);
+    /* Dark blue color */
+    font-size: 32px;
+    /* Large font size */
+    font-weight: 900;
+    /* Bold weight */
+    line-height: 1;
+    /* Tight line height */
+}
+
+/* 
+  Product description styles 
+*/
+.text-part p {
+    font-family: var(--ff-base);
+    /* Use base font */
+    color: var(--clr-gray-blue);
+    /* Gray-blue color */
+    font-size: 14px;
+    /* Small font size */
+    line-height: 1.5;
+    /* Comfortable line height */
+    margin: 20px 0;
+    /* Vertical spacing */
+}
+
+/* 
+  Price section styles 
+*/
+.price {
+    display: flex;
+    /* Use flexbox for horizontal layout */
+    align-items: center;
+    /* Vertically center items */
+    gap: 20px;
+    /* Space between prices */
+    margin-bottom: 20px;
+    /* Space below price section */
+}
+
+/* 
+  Discounted price styles 
+*/
+.price .discounted {
+    font-family: var(--ff-accent);
+    /* Use accent font */
+    color: var(--clr-green);
+    /* Green color */
+    font-size: 30px;
+    /* Large font size */
+    font-weight: 900;
+    /* Bold weight */
+}
+
+/* 
+  Original price styles (strikethrough) 
+*/
+.price .original {
+    font-family: var(--ff-base);
+    /* Use base font */
+    color: var(--clr-gray-blue);
+    /* Gray-blue color */
+    font-size: 14px;
+    /* Small font size */
+    text-decoration: line-through;
+    /* Strikethrough for original price */
+}
+
+/* 
+  Add to Cart button styles 
+*/
+.add-to-cart {
+    background-color: var(--clr-green);
+    /* Green background */
+    color: var(--clr-white);
+    /* White text */
+    font-family: var(--ff-base);
+    /* Use base font */
+    font-size: 14px;
+    /* Medium font size */
+    font-weight: 700;
+    /* Bold weight */
+    letter-spacing: 1px;
+    /* Slight letter spacing */
+    border: none;
+    /* No border */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 15px;
+    /* Padding inside button */
+    width: 100%;
+    /* Full width of container */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    display: flex;
+    /* Flex layout for icon and text */
+    align-items: center;
+    /* Vertically center content */
+    justify-content: center;
+    /* Center content horizontally */
+    gap: 10px;
+    /* Space between icon and text */
+    transition: background-color 0.3s ease;
+    /* Smooth background transition */
+}
+
+/* 
+  Add to Cart button hover effect 
+*/
+.add-to-cart:hover {
+    background-color: var(--clr-light-green);
+    /* Darker green on hover */
+}
+
+/* 
+  Shopping cart icon styles inside button 
+*/
+.add-to-cart i {
+   font-size: 16px; /* Icon size */
+}
+
+/* 
+  Responsive styles for small screens 
+*/
+@media (max-width: 600px) {
+    .card {
+        grid-template-columns: 1fr;
+        /* Single column layout */
+        max-width: 350px;
+        /* Smaller max width */
+    }
+
+    .card img {
+        border-top-right-radius: 15px;
+        /* Rounded top-right corner */
+        border-bottom-left-radius: 0;
+        /* Remove bottom-left radius */
+        border-top-left-radius: 15px;
+        /* Keep top-left radius */
+        height: auto;
+        /* Auto height for image */
+    }
+}
